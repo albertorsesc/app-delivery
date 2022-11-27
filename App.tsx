@@ -5,7 +5,7 @@ import RootNavigator from './navigator/RootNavigator';
 import utilities from './tailwind.json';
 
 const client = new ApolloClient({
-	uri: 'http://localhost:5001/api/deliveries',
+	uri: 'http://192.168.0.7:5001/api/deliveries',
 	cache: new InMemoryCache(),
 });
 

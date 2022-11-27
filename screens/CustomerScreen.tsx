@@ -11,12 +11,12 @@ import { ActivityIndicator, ScrollView } from 'react-native';
 import { useTailwind } from 'tailwind-rn/dist';
 import CustomerCard from '../components/CustomerCard';
 import { GET_CUSTOMERS } from '../graphql/queries';
-import { RootStack } from '../navigator/RootNavigator';
+import { RootStackParamList } from '../navigator/RootNavigator';
 import { TabStackParamList } from '../navigator/TabNavigator';
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
 	BottomTabNavigationProp<TabStackParamList, 'Customers'>,
-	NativeStackNavigationProp<RootStack>
+	NativeStackNavigationProp<RootStackParamList>
 >;
 
 const CustomerScreen = () => {
@@ -31,7 +31,7 @@ const CustomerScreen = () => {
 		});
 	});
 
-	console.log(data, error, loading);
+	console.log(loading, error, data);
 
 	return (
 		<ScrollView style={{ backgroundColor: '#59C1CC' }}>
