@@ -1,24 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { TailwindProvider } from 'tailwind-rn';
+import { NavigationContainer } from '@react-navigation/native';
+import { TailwindProvider } from 'tailwind-rn/dist';
+import RootNavigator from './navigator/RootNavigator';
 import utilities from './tailwind.json';
-import CustomerScreen from './screens/CustomerScreen';
 
 export default function App() {
 	return (
 		<TailwindProvider utilities={utilities}>
 			<NavigationContainer>
-				<CustomerScreen />
+				<RootNavigator />
 			</NavigationContainer>
 		</TailwindProvider>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});

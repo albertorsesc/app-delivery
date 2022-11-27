@@ -1,11 +1,25 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useLayoutEffect } from 'react';
 import CustomerScreen from '../screens/CustomerScreen';
 import OrderScreen from '../screens/OrderScreen';
 
-const Tab = createBottomTabNavigator();
+export type TabStackParamList = {
+	Customers: undefined;
+	Orders: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const TabNavigator = () => {
+	const navigation = useNavigation();
+
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			headerShown: false,
+		});
+	}, []);
+
 	return (
 		<Tab.Navigator>
 			<Tab.Screen name="Customers" component={CustomerScreen} />
