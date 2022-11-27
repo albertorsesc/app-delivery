@@ -15,7 +15,7 @@ type TrackingItem = {
 }
 
 type Item = {
-  item_id: IDBCursor;
+  item_id: ID;
   name: string;
   price: number;
   quantity: number;
