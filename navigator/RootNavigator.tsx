@@ -11,7 +11,7 @@ export type RootStackParamList = {
 		name: string;
 	};
 	Order: {
-		order: any;
+		order: Order;
 	};
 };
 
